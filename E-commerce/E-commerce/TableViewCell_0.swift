@@ -15,7 +15,12 @@ class TableViewCell_0: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        bannerCollectionView.delegate = self
+        bannerCollectionView.dataSource = self
+        categoryCollectionView.delegate = self
+        categoryCollectionView.dataSource = self
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
