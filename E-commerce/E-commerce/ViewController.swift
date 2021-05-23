@@ -18,6 +18,10 @@ class ViewController: UIViewController {
         
         homeTableView.delegate = self
         homeTableView.dataSource = self
+        searchBtn.layer.cornerRadius = 5
+        
+//        self.tableView.rowHeight = UITableViewAutomaticDimension
+//        self.tableView.estimatedRowHeight = 200.0
         
     }
 
@@ -27,17 +31,33 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        
         return 1;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell_0", for: indexPath) as! TableViewCell_0
+        if (indexPath.row == 0) {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell_0", for: indexPath) as! TableViewCell_0
 
-        return cell
+            return cell
+        }
+        else {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell_0", for: indexPath) as! TableViewCell_1
+
+            return cell
+        }
+        
     }
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 300
+        
+    }
     
     
 }
