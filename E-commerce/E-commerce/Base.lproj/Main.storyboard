@@ -153,24 +153,21 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fashion Mall" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhM-Ik-YLq">
-                                                    <rect key="frame" x="20" y="11" width="170" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="usy-iw-BcN"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="20" y="11" width="227.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For The Fashionable You!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrP-hN-g3T">
-                                                    <rect key="frame" x="20" y="36" width="176.5" height="18"/>
+                                                    <rect key="frame" x="20" y="36" width="250" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                     <color key="textColor" red="0.26274509800000001" green="0.26379683609999999" blue="0.26379683609999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ws7-Rg-LZ3">
-                                                    <rect key="frame" x="220.5" y="19" width="157.5" height="34"/>
+                                                    <rect key="frame" x="278" y="19" width="100" height="34"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Gg4-bl-qq2"/>
+                                                        <constraint firstAttribute="width" constant="100" id="0Js-eM-X38"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                                     <state key="normal" title="See more">
@@ -179,7 +176,7 @@
                                                 </button>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ypX-aw-acc">
                                                     <rect key="frame" x="24" y="70" width="366" height="150"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="backgroundColor" red="0.98431372549999996" green="0.4431372549" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="150" id="XhQ-VI-mbk"/>
                                                     </constraints>
@@ -252,12 +249,12 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ws7-Rg-LZ3" firstAttribute="top" secondItem="js3-7M-xun" secondAttribute="topMargin" constant="8" id="9nx-TY-sA7"/>
+                                                <constraint firstItem="fhM-Ik-YLq" firstAttribute="leading" secondItem="JHB-QL-Lb0" secondAttribute="trailing" constant="8" id="Bej-NB-O07"/>
                                                 <constraint firstAttribute="trailing" secondItem="ypX-aw-acc" secondAttribute="trailing" constant="24" id="DLo-CM-ckD"/>
                                                 <constraint firstItem="ypX-aw-acc" firstAttribute="top" secondItem="rrP-hN-g3T" secondAttribute="bottom" constant="16" id="IPf-kQ-YZO"/>
                                                 <constraint firstItem="ws7-Rg-LZ3" firstAttribute="leading" secondItem="fhM-Ik-YLq" secondAttribute="trailing" constant="30.5" id="Pvt-gX-EKb"/>
                                                 <constraint firstItem="JHB-QL-Lb0" firstAttribute="leading" secondItem="js3-7M-xun" secondAttribute="leading" id="VLH-0e-0cN"/>
-                                                <constraint firstItem="fhM-Ik-YLq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="js3-7M-xun" secondAttribute="leadingMargin" id="Vmu-CG-xHc"/>
-                                                <constraint firstItem="ws7-Rg-LZ3" firstAttribute="leading" secondItem="rrP-hN-g3T" secondAttribute="trailing" constant="24" id="eQI-Tp-4iG"/>
+                                                <constraint firstItem="ws7-Rg-LZ3" firstAttribute="leading" secondItem="rrP-hN-g3T" secondAttribute="trailing" constant="8" id="eQI-Tp-4iG"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="ws7-Rg-LZ3" secondAttribute="trailing" constant="16" id="exY-dc-sOc"/>
                                                 <constraint firstItem="rrP-hN-g3T" firstAttribute="top" secondItem="fhM-Ik-YLq" secondAttribute="bottom" constant="4" id="gKk-tH-wJt"/>
                                                 <constraint firstItem="JHB-QL-Lb0" firstAttribute="top" secondItem="js3-7M-xun" secondAttribute="top" constant="13" id="gSY-c5-ris"/>
