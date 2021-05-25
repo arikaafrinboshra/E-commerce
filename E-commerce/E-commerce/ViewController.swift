@@ -9,11 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    //Outlets
     @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var homeTableView: UITableView!
     
-    
+    //Variables
     var titleArr = ["Evaly Fashion Mall",
                     "Evaly Foorti",
                     "Hotel & Tours",
@@ -24,6 +25,116 @@ class ViewController: UIViewController {
                        "Best Hotels & Tour Deals",
                        "Exclusive Offers!"]
     
+    var productName_0 = ["Unstiched Embroidered",
+                         "Bioaqua Pink Cherry Lip Private",
+                         "STM Cap Style New Version Bike",
+                         "Polyester Half Fingered Hand",
+                         "Bio Oil Specialist Skincare Oil - 60ml",
+                         "New Women Tote Purse Leather",
+                         "Polyester Motorcycle Gloves",
+                         "Pro Biker Motorcycle Riding",
+                         "White Rice Whitening Pore",
+                         "Leather Backpack for Women -"]
+    
+    var productName_1 = ["BUY 1 Honda CB150R",
+                         "BUY 1 XSR 155cc Motor Bike and",
+                         "Buy Hoichoi Subscription - 12",
+                         "Buy Hoichoi Subscription - 12",
+                         "Buy 1 Bajaj Platina ES 100 Motor Bike",
+                         "Buy 1 Bajaj CT-100 ES Motor Bike and",
+                         "Buy 1 Bajaj Pulser 150cc Motor Bike",
+                         "Buy 1 Bajaj Pulser 150cc Double Disk",
+                         "Buy 1 Bajaj Discover 110cc",
+                         "Buy 1 Bajaj Discover 125CC"]
+    
+    var productName_2 = ["Long Beach Suites Dhaka - Long",
+                         "Long Beach Suites Dhaka - Executive",
+                         "Long Beach Suites Dhaka - Premier",
+                         "Long Beach Suites Dhaka - Premier",
+                         "Long Beach Suites Dhaka - Super",
+                         "Long Beach Suites Dhaka - Super",
+                         "Long Beach Suites Dhaka - Deluxe",
+                         "Ambrosia Guest House Deluxe Twin",
+                         "Ambrosia Guest House Deluxe",
+                         "Ambrosia Guest House Standard"]
+    
+    var productName_3 = ["Buy 1 OPPO F19 Smartphone -",
+                         "Buy 1 OPPO F19 Smartphone -",
+                         "Robi 10 Minute School 24 Hours",
+                         "Robi 10 Minute School English",
+                         "iCarnival Smart Gift Card - 10000 TK",
+                         "iCarnival Smart Gift Card - 5000 TK",
+                         "iCarnival Smart Gift Card - 2000 TK",
+                         "SSC Math Exam Preparation Course",
+                         "Onubhutir Obhidhan - Tahsan",
+                         "ghoori English Learning - BBC"]
+    
+    
+    
+    var productPrice_0 = ["৳ 1747",
+                          "৳ 249",
+                          "৳ 0",
+                          "৳ 332",
+                          "৳ 785",
+                          "৳ 1666",
+                          "৳ 322",
+                          "৳ 322",
+                          "৳ 304",
+                          "৳ 1632"]
+    
+    var productPrice_1 = ["৳ 550000",
+                          "৳ 525000",
+                          "৳ 700",
+                          "৳ 500",
+                          "৳ 99500",
+                          "৳ 95500",
+                          "৳ 169900",
+                          "৳ 180900",
+                          "৳ 117900",
+                          "৳ 131500"]
+    
+    var productPrice_2 = ["৳ 13920",
+                          "৳ 12528",
+                          "৳ 9744",
+                          "৳ 9048",
+                          "৳ 8352",
+                          "৳ 6960",
+                          "৳ 6264",
+                          "৳ 3360",
+                          "৳ 3360",
+                          "৳ 2800"]
+    
+    var productPrice_3 = ["৳ 21990",
+                          "৳ 21990",
+                          "৳ 399",
+                          "৳ 399",
+                          "৳ 7520",
+                          "৳ 3760",
+                          "৳ 1504",
+                          "৳ 960",
+                          "৳ 179",
+                          "৳ 115"]
+    
+    var specialCategoryArr = ["Evaly Express",
+                              "Shops - Cash On Delivery (COD)"]
+    
+    var specialCollectionArr_0 = ["Shwapno",
+                                "Mobile Express",
+                                "AKS Pharmacy",
+                                "Wholesale Club",
+                                "Bengal Meat",
+                                "Little India",
+                                "Express Grocery",
+                                "Khaleque & Sons"]
+    
+    var specialCollectionArr_1 = ["Armandy Kids for Cash on Delivery Service",
+                                  "Shok Online Market for Cash on Delivery Service",
+                                  "Good Choice for Cash on Delivery Service",
+                                  "Jomjom Traders for Cash on Delivery Service",
+                                  "Mantasha Nabil Enterprise for Cash on Deliery Service",
+                                  "Leela for Cash on Delivery Service",
+                                  "Global Technology & Safety Solution for Cash on Delivery Service",
+                                  "SK FASHION TRADERS for Cash on Delivery Service"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +177,23 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             
             cell.title.text = titleArr[indexPath.row - 1]
             cell.subTitle.text = subTitleArr[indexPath.row - 1]
+            
+            if (indexPath.row == 1) {
+                cell.productName = productName_0
+                cell.productPrice = productPrice_0
+            }
+            else if (indexPath.row == 2) {
+                cell.productName = productName_1
+                cell.productPrice = productPrice_1
+            }
+            else if (indexPath.row == 3) {
+                cell.productName = productName_2
+                cell.productPrice = productPrice_2
+            }
+            else if (indexPath.row == 4) {
+                cell.productName = productName_3
+                cell.productPrice = productPrice_3
+            }
             
             return cell
         }
