@@ -1,30 +1,32 @@
 //
-//  TableViewCell_1.swift
+//  TableViewCell_2.swift
 //  E-commerce
 //
-//  Created by ARIKA on 23/5/21.
+//  Created by ARIKA on 26/5/21.
 //
 
 import UIKit
 
-class TableViewCell_1: UITableViewCell {
+class TableViewCell_2: UITableViewCell {
 
     @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var subTitle: UILabel!
-    @IBOutlet weak var seeMoreBtn: UIButton!
+    @IBOutlet weak var seeAllBtn: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var productName = [String]()
-    var productPrice = [String]()
+    var nameArr = [String]()
+    
+    @IBAction func seeAllBtn(_ sender: UIButton) {
+        
+    }
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        seeMoreBtn.layer.cornerRadius = 16
+        // Initialization code
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -35,27 +37,26 @@ class TableViewCell_1: UITableViewCell {
 
 }
 
-extension TableViewCell_1: UICollectionViewDelegate, UICollectionViewDataSource {
+extension TableViewCell_2: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return productName.count
+        //print("check - \(nameArr.count)")
+        //print("arr - \(nameArr)")
+        return nameArr.count
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProductCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SpecialCollectionViewCell
         
-        cell.name.text = productName[indexPath.row]
-        cell.price.text = productPrice[indexPath.row]
+        cell.label.text = nameArr[indexPath.row]
         
-        cell.layer.backgroundColor = UIColor.systemBackground.cgColor
-        cell.layer.cornerRadius = 4
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.systemGray5.cgColor
+        cell.layer.cornerRadius = 7
         
         return cell
-        
     }
     
 }
-

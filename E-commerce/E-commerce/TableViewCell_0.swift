@@ -33,7 +33,6 @@ class TableViewCell_0: UITableViewCell {
         
         categoryCollectionView.layer.backgroundColor = UIColor.white.cgColor
         
-        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

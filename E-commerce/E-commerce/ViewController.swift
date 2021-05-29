@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var c:Int = 0
+    var d:Int = 0
     //Outlets
     @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var menuBtn: UIButton!
@@ -115,19 +117,19 @@ class ViewController: UIViewController {
                           "৳ 179",
                           "৳ 115"]
     
-    var specialCategoryArr = ["Evaly Express",
-                              "Shops - Cash On Delivery (COD)"]
+    var titleArr_1 = ["Evaly Express",
+                      "Shops - Cash On Delivery (COD)"]
     
-    var specialCollectionArr_0 = ["Shwapno",
-                                "Mobile Express",
-                                "AKS Pharmacy",
-                                "Wholesale Club",
-                                "Bengal Meat",
-                                "Little India",
-                                "Express Grocery",
-                                "Khaleque & Sons"]
+    var evalyExpress = ["Shwapno",
+                                  "Mobile Express",
+                                  "AKS Pharmacy",
+                                  "Wholesale Club",
+                                  "Bengal Meat",
+                                  "Little India",
+                                  "Express Grocery",
+                                  "Khaleque & Sons"]
     
-    var specialCollectionArr_1 = ["Armandy Kids for Cash on Delivery Service",
+    var shops = ["Armandy Kids for Cash on Delivery Service",
                                   "Shok Online Market for Cash on Delivery Service",
                                   "Good Choice for Cash on Delivery Service",
                                   "Jomjom Traders for Cash on Delivery Service",
@@ -143,9 +145,7 @@ class ViewController: UIViewController {
         homeTableView.dataSource = self
         searchBtn.layer.cornerRadius = 5
         
-        
-        
-        //        self.tableView.rowHeight = UITableViewAutomaticDimension
+        //        self.tabl22ৌeView.rowHeight = UITableViewAutomaticDimension
         //        self.tableView.estimatedRowHeight = 200.0
         
     }
@@ -157,22 +157,22 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        var c = titleArr.count
-        c+=1
+        c = titleArr.count
+        d = titleArr_1.count
         
-        return c
+        return c + d + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if (indexPath.row == 0) {
-            
+
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell_0", for: indexPath) as! TableViewCell_0
-            
+
             return cell
         }
         
-        else {
+        else if (indexPath.row >= 1 && indexPath.row <= c){
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell_1", for: indexPath) as! TableViewCell_1
             
             cell.title.text = titleArr[indexPath.row - 1]
@@ -197,12 +197,43 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             
             return cell
         }
+        else if (indexPath.row >= 5 && indexPath.row <= 6) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell_2
+            
+            cell.title.text = titleArr_1[indexPath.row - c - 1]
+            
+            if (indexPath.row == 5) {
+                cell.nameArr = evalyExpress
+            }
+            else if (indexPath.row == 6) {
+                cell.nameArr = shops
+            }
+            
+            return cell
+        }
+        
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell_2
+            
+            return cell
+        }
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 300
+        if (indexPath.row == 0) {
+            return 280
+        }
+        else if (indexPath.row >= 1 && indexPath.row <= c) {
+            return 210
+        }
+        else if (indexPath.row >= 5 && indexPath.row <= 6) {
+            return 280
+        }
+        else {
+            return 0
+        }
         
     }
     

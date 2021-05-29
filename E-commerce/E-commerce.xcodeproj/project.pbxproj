@@ -18,6 +18,8 @@
 		F8F169D92659265700C4DCC2 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F169D82659265700C4DCC2 /* CategoryCollectionViewCell.swift */; };
 		F8F169DB265A51F300C4DCC2 /* TableViewCell_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F169DA265A51F300C4DCC2 /* TableViewCell_1.swift */; };
 		F8F169DD265A52F200C4DCC2 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F169DC265A52F200C4DCC2 /* ProductCollectionViewCell.swift */; };
+		F8F169DF265E246200C4DCC2 /* SpecialCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F169DE265E246200C4DCC2 /* SpecialCollectionViewCell.swift */; };
+		F8F169E1265E24A800C4DCC2 /* TableViewCell_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F169E0265E24A800C4DCC2 /* TableViewCell_2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		F8F169D82659265700C4DCC2 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		F8F169DA265A51F300C4DCC2 /* TableViewCell_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell_1.swift; sourceTree = "<group>"; };
 		F8F169DC265A52F200C4DCC2 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		F8F169DE265E246200C4DCC2 /* SpecialCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialCollectionViewCell.swift; sourceTree = "<group>"; };
+		F8F169E0265E24A800C4DCC2 /* TableViewCell_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell_2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 				F8F169D82659265700C4DCC2 /* CategoryCollectionViewCell.swift */,
 				F8F169DA265A51F300C4DCC2 /* TableViewCell_1.swift */,
 				F8F169DC265A52F200C4DCC2 /* ProductCollectionViewCell.swift */,
+				F8F169DE265E246200C4DCC2 /* SpecialCollectionViewCell.swift */,
+				F8F169E0265E24A800C4DCC2 /* TableViewCell_2.swift */,
 			);
 			path = "E-commerce";
 			sourceTree = "<group>";
@@ -155,10 +161,12 @@
 				F8F169C52659082F00C4DCC2 /* ViewController.swift in Sources */,
 				F8F169C12659082F00C4DCC2 /* AppDelegate.swift in Sources */,
 				F8F169DD265A52F200C4DCC2 /* ProductCollectionViewCell.swift in Sources */,
+				F8F169DF265E246200C4DCC2 /* SpecialCollectionViewCell.swift in Sources */,
 				F8F169DB265A51F300C4DCC2 /* TableViewCell_1.swift in Sources */,
 				F8F169D52659219700C4DCC2 /* TableViewCell_0.swift in Sources */,
 				F8F169D72659264400C4DCC2 /* BannerCollectionViewCell.swift in Sources */,
 				F8F169D92659265700C4DCC2 /* CategoryCollectionViewCell.swift in Sources */,
+				F8F169E1265E24A800C4DCC2 /* TableViewCell_2.swift in Sources */,
 				F8F169C32659082F00C4DCC2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
