@@ -65,7 +65,7 @@ extension TableViewCell_0: UICollectionViewDelegate, UICollectionViewDataSource 
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CategoryCollectionViewCell
             
             cell.image.clipsToBounds = true
-            cell.image.layer.cornerRadius = 28
+            cell.image.layer.cornerRadius = 25
             cell.image.image = imgArr[indexPath.row]
             cell.label.text = labelArr[indexPath.row]
             
@@ -74,21 +74,19 @@ extension TableViewCell_0: UICollectionViewDelegate, UICollectionViewDataSource 
         
     }
     
+}
+
+extension TableViewCell_0: UICollectionViewDelegateFlowLayout {
     
-    //    func collectionView(_ collectionView: UICollectionView,
-    //                        heightForItemAt
-    //                            indexPath: IndexPath,
-    //                        with width: CGFloat) -> CGFloat {
-    //
-    //        return 150.0
-    //
-    //    }
-    
-//        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//                let size = (collectionView.frame.size.width) / 2
-//                return CGSize(width: 10, height: 100/*size + 80*/)
-//
-//        }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        if (collectionView == self.bannerCollectionView) {
+            return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+        }
+        else {
+            return CGSize(width: collectionView.frame.width / 5 - 8, height: collectionView.frame.width / 5 + 8)
+        }
+        
+    }
     
 }
