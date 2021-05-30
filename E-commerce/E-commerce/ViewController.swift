@@ -117,6 +117,17 @@ class ViewController: UIViewController {
                           "৳ 179",
                           "৳ 115"]
     
+    var beforeDiscount = ["৳ 25673",
+                          "",
+                          "৳ 473",
+                          "৳ 700",
+                          "৳ 8634",
+                          "",
+                          "৳ 2375",
+                          "",
+                          "৳ 300",
+                          "৳ 250"]
+    
     var titleArr_1 = ["Evaly Express",
                       "Shops - Cash On Delivery (COD)"]
     
@@ -160,7 +171,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         c = titleArr.count
         d = titleArr_1.count
         
-        return c + d + 1
+        return c + d + 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -198,7 +209,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         else if (indexPath.row >= 5 && indexPath.row <= 6) {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell_2
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell_2", for: indexPath) as! TableViewCell_2
             
             cell.title.text = titleArr_1[indexPath.row - c - 1]
             
@@ -213,7 +224,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell_2
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell_3", for: indexPath) as! TableViewCell_3
+            
+            cell.productName = productName_3
+            cell.productPrice = productPrice_3
+            cell.beforeDiscount = beforeDiscount
             
             return cell
         }
@@ -232,7 +247,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             return 280
         }
         else {
-            return 0
+            return 1300
         }
         
     }
