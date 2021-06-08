@@ -11,10 +11,11 @@ class ViewController: UIViewController {
     
     var c:Int = 0
     var d:Int = 0
+    
     //Outlets
     @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var menuBtn: UIButton!
-    @IBOutlet weak var homeTableView: UITableView!
+    @IBOutlet var homeTableView: UITableView!
     
     //Variables
     var titleArr = ["Evaly Fashion Mall",
@@ -155,6 +156,7 @@ class ViewController: UIViewController {
         homeTableView.delegate = self
         homeTableView.dataSource = self
         searchBtn.layer.cornerRadius = 5
+        
         
         //        self.tabl22ৌeView.rowHeight = UITableViewAutomaticDimension
         //        self.tableView.estimatedRowHeight = 200.0

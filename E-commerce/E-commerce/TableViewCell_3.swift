@@ -21,6 +21,7 @@ class TableViewCell_3: UITableViewCell {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.isScrollEnabled = false
         
     }
 

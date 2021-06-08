@@ -6,11 +6,19 @@
 //
 
 import UIKit
+import ImageSlideshow
 
 class TableViewCell_0: UITableViewCell {
     
-    @IBOutlet weak var bannerCollectionView: UICollectionView!
+    
+    @IBOutlet var imageSlider: ImageSlideshow!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
+    
+    let localSource = [BundleImageSource(imageString: "QBanner1"),
+                       BundleImageSource(imageString: "QBanner2"),
+                       BundleImageSource(imageString: "QBanner3"),
+                       BundleImageSource(imageString: "QBanner4"),
+                       BundleImageSource(imageString: "QBanner5")]
     
     var imgArr = [ UIImage(named: "QBanner1"),
                    UIImage(named: "QBanner2"),
@@ -26,10 +34,16 @@ class TableViewCell_0: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        bannerCollectionView.delegate = self
-        bannerCollectionView.dataSource = self
+        imageSlider.slideshowInterval = 3.0
+        //imageSlider.pageIndicatorPosition = .init(horizontal: .center, vertical: .under)
+        imageSlider.contentScaleMode = UIViewContentMode.scaleToFill
+        
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
+        imageSlider.delegate = self
+        
+        imageSlider.setImageInputs(localSource)
+        imageSlider.layer.cornerRadius = 8
         
         categoryCollectionView.layer.backgroundColor = UIColor.white.cgColor
         
@@ -52,25 +66,16 @@ extension TableViewCell_0: UICollectionViewDelegate, UICollectionViewDataSource 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if (collectionView == self.bannerCollectionView) {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! BannerCollectionViewCell
-            
-            cell.image.clipsToBounds = true
-            cell.image.layer.cornerRadius = 8
-            cell.image.image = imgArr[indexPath.row]
-            
-            return cell
-        }
-        else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CategoryCollectionViewCell
-            
-            cell.image.clipsToBounds = true
-            cell.image.layer.cornerRadius = 25
-            cell.image.image = imgArr[indexPath.row]
-            cell.label.text = labelArr[indexPath.row]
-            
-            return cell
-        }
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CategoryCollectionViewCell
+        
+        cell.image.clipsToBounds = true
+        cell.image.layer.cornerRadius = 25
+        cell.image.image = imgArr[indexPath.row]
+        cell.label.text = labelArr[indexPath.row]
+        
+        return cell
+        
         
     }
     
@@ -79,14 +84,18 @@ extension TableViewCell_0: UICollectionViewDelegate, UICollectionViewDataSource 
 extension TableViewCell_0: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        if (collectionView == self.bannerCollectionView) {
-            return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
-        }
-        else {
-            return CGSize(width: collectionView.frame.width / 5 - 8, height: collectionView.frame.width / 5 + 8)
-        }
         
+        
+        return CGSize(width: collectionView.frame.width / 5 - 8, height: collectionView.frame.width / 5 + 8)
+        
+    }
+    
+}
+
+extension TableViewCell_0: ImageSlideshowDelegate {
+    
+    func imageSlideshow(_ imageSlideshow: ImageSlideshow, didChangeCurrentPageTo page: Int) {
+        print("current page:", page)
     }
     
 }
